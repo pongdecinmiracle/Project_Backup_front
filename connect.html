@@ -1,0 +1,44 @@
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://jquery.com/src/jquery.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<script type="text/javascript">
+// $(document).ready(function(){
+    // $("button").click(function(){
+    //     $.post("http://localhost:3001/test", {name:'jimmy',email:'jimmy@gmail.com'})
+       
+ 
+    // }); 
+// });
+function hashIt(value){
+    $(document).ready(function(){
+        $.ajax({
+            type: "POST",
+            url: "hash2.php",
+            data: "toHash="+value,
+            success: function(result){
+                if(value == ""){
+                    $("#hash")[0].value = "";
+                } else {
+                    $("#hash")[0].value = result;
+                }
+                
+            }
+        })
+    })
+}
+</script>
+</head>
+<body>
+<!-- 
+<button>Send an HTTP GET request to a page and get the result back</button> -->
+
+<form>
+    <input type="text" onkeyup="hashIt(this.value)"/>
+    <input type="text" id="hash"/>
+</form>
+
+</body>
+</html>

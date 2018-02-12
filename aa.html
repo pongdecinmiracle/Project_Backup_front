@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='./style/signin.css' type='text/css'></link>
+    <script src="./js/ace-extra.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery-ui.custom.min.js"></script>
+	<script src="./js/jquery.ui.touch-punch.min.js"></script>
+	<script src="./js/jquery.easypiechart.min.js"></script>
+	<script src="./js/jquery.sparkline.index.min.js"></script>
+	<script src="./js/jquery.flot.min.js"></script>
+	<script src="./js/jquery.flot.pie.min.js"></script>
+	<script src="./js/jquery.flot.resize.min.js"></script>
+	<script src="./js/ace-elements.min.js"></script>
+    <script src="./js/ace.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <title>Document</title>
+</head>
+<body>
+    
+        <input type="text" id="id" name="id_student" />
+        <input type="button" value="click" onclick="getdata()" >
+</br>
+
+<!-- ============================================================================================================= -->
+
+    <div class="row">
+            <div class="col-xs-12">
+                <table id="simple-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="center">
+                                <label class="pos-rel">
+                                    <input type="checkbox" class="ace" />
+                                    <!-- <span class="lbl"></span> -->
+                                </label>
+                            </th>
+                            <!-- <th class="detail-col">Details</th> -->
+                            <th>Mac Address</th>
+                            <th>
+                                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                                Date
+                            </th>
+                            <th>Type</th>
+                            <form>
+                                <th><a id="newby"></a></th>
+                            </form>
+                            <th class="hidden-480">Status</th>
+                            <!-- <th>Optional</th> -->
+                        </tr>
+                    </thead>
+<!-- tbody -->
+                    <tbody>
+                        <!-- <tr>
+                            <td class="center">
+                                <label class="pos-rel">
+                                    <input type="checkbox" class="ace" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </td>
+
+                            <td>
+                                <span1></span1>
+                            </td>
+                        </tr>         -->
+                    </tbody>
+                </table>
+            </div><!-- /.span -->
+        </div><!-- /.row -->
+
+<!-- ============================================================================================================= -->
+
+       
+       <script >
+
+        window.query()
+
+        var data1 = []
+        function query(){
+            $(document).ready(function(){
+                $.get("http://localhost:3001/test", 
+                {}).then(function(res,status){
+                        console.log(res)
+
+                        if(status!="success"){
+                            console.log("err")
+                        }else{
+                            var len = res.length
+                            console.log(len)
+                            res.forEach(element => {
+                            $(document).ready(function() {    
+                            $('table tbody')[0].innerHTML +=
+                              "<tr>" +
+                                    "<td class=\"center\">"+
+                                        "<label class=\"pos-rel\">"+
+                                            "<input type=\"checkbox\" class=\"ace\" />"+
+                                            "<span class=\"lbl\"></span>"+
+                                        "</label>"+
+                                    "</td>"+
+                                    "<td>"+
+                                        // mac addr
+                                        "00:25:96:FF:FE:12:34:56"+
+                                    "</td>"+
+                                    "<td class=\"hidden-480\">"+
+                                        // Date
+                                        "15-05-2017::14.00.01"+
+                                    "</td>"+
+                                    "<td>"+
+                                        // Status
+                                        "OK"+
+                                    "</td>"+
+
+                                    "<td class=\"hidden-480\">"+
+                                        "<span class=\"label label-sm label-inverse arrowed-in\">Flagged</span>" +
+                                    "</td>" +
+                            "</tr>"
+                          })
+                        });
+                            
+                        }
+                    })
+            })
+            
+            
+        }
+
+        function a(){
+            console.log(data1)
+        }
+        
+
+        for (var a=0; a < 10; a++) {
+                document.write("<tr>");
+                for(var b=0; b<10; b++) {
+                    // document.write("<td>"+a*b+"</td>");
+                    document.write("</br>");
+                }
+            document.write("</tr>");
+            }
+        </script>
+
+       
+<!-- ============================================================================================================= -->
+
+</body>
+
+</html>
+
