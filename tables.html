@@ -45,6 +45,9 @@
 				li.isHidden{
 					display : none
 				}
+				li.isHidden2{
+					display : none
+				}
 			</style>
 	</head>
 
@@ -220,7 +223,16 @@
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+                    </li>
+
+                    <li class="isHidden2">
+                            <a href="verify.html">
+                                <i class="menu-icon glyphicon glyphicon-user"></i>
+                                Verify By Admin
+                            </a>
+    
+                            <b class="arrow"></b>
+                    </li>
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
@@ -521,29 +533,38 @@
 
 			function check(){
 				console.log("check")
-				var Token = localStorage.getItem("token")
-                var admin = localStorage.getItem("admin")
-				if(Token){
+				var token = localStorage.getItem("Token")
+				var admin = localStorage.getItem("Admin")
+				var status = localStorage.getItem("Status")
+				if(token){
 					console.log("pass")
                     if(admin==0){
                         
                     }else if(admin==1){
-                        var hiddenInput = document.getElementsByClassName("isHidden")
-                        // console.log(hiddenInput)
-                        hiddenInput[0].style.display = "block"
+						if(status=="Admin"){
+							var hiddenInput = document.getElementsByClassName("isHidden")
+							var hiddenInput2 = document.getElementsByClassName("isHidden2")
+							// console.log(hiddenInput)
+							hiddenInput[0].style.display = "block"
+							hiddenInput2[0].style.display = "block"
+						}else if(status=="Visitor"){
+
+						}
+                        
                     }
 				}else{
 					window.location.href= 'login.html'
                 
 			    }
             }
-
+			
 			function logout(){
 				console.log("logout")
-				localStorage.removeItem("token");
-				var admin = localStorage.getItem("admin")
+				localStorage.removeItem("Token");
+				localStorage.removeItem("Status");
+				var admin = localStorage.getItem("Admin")
 				if(admin){
-					localStorage.removeItem("admin");
+					localStorage.removeItem("Admin");
 				}
 				window.location.href= 'login.html'
 			}

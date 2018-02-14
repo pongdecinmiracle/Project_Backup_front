@@ -375,11 +375,28 @@
 																		// console.log(res.success)
 																		console.log(res)
 																		if(res.success==true){
-																			console.log("is true")
-																			localStorage.setItem("token", res.token);
-																			localStorage.setItem("admin", res.status);
-																			window.location.href = 'dashboard.html'
+																			if(res.status=="Require"){
+																				alert("This ID Can't Login NOW! \n Please Waiting for Pre-Active")
+																				window.location.href = 'login.html'
+
+																			}else if(res.status=="Admin"){
+																				console.log("is true")
+																				localStorage.setItem("Token", res.token);
+																				localStorage.setItem("Admin", res.admin);
+																				localStorage.setItem("Status", res.status);
+																				window.setTimeout(3000);
+																				window.location.href = 'dashboard.html'
+																		}else if(res.status=="Visitor"){
+																				console.log("is true")
+																				localStorage.setItem("Token", res.token);
+																				localStorage.setItem("Admin", res.admin);
+																				localStorage.setItem("Status", res.status);
+																				window.setTimeout(3000);
+																				window.location.href = 'dashboard.html'
 																		}else{
+
+																		}
+																	}else{
 																			alert(res.message+ "Please Try Again")
 																			window.location.href = 'login.html' // --> index.html
 																		}

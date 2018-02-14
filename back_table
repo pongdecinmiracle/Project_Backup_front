@@ -3401,3 +3401,60 @@
         
     //     // do something with productId, product, Quantity
     // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+                            var len = res.length
+                            console.log(len)
+                            res.forEach(element => {
+                            $(document).ready(function() {    
+                            $('table tbody')[0].innerHTML +=
+                              "<tr>" +
+                                    "<td class=\"center\">"+
+                                        "<label class=\"pos-rel\">"+
+                                            "<input type=\"checkbox\" class=\"ace\" />"+
+                                            "<span class=\"lbl\"></span>"+
+                                        "</label>"+
+                                    "</td>"+
+                                    "<td>"+
+                                        // Email
+                                        element.Email+
+                                    "</td>"+
+                                    "<td class=\"hidden-480\">"+
+                                        // Username
+                                        element.Username+
+                                    "</td>"+
+                                    "<td>"+
+                                        // Status
+                                        "OK"+
+                                    "</td>"+
+
+                                    "<td class=\"hidden-480\">"+
+                                        // "<span class=\"label label-sm label-inverse arrowed-in\">Flagged</span>" +
+                                        "<select id=\""+element.Email+"\" >"+
+                                            "<option  value=\"0\">Inactive</option>"+
+                                            "<option  value=\"1\">Active</option>"+
+                                            "<option  value=\"2\">Delete</option>"+
+                                        "</select>"+
+                                    "</td>" +
+                            "</tr>"
+                            
+                          })
+                        });
+                            
+                        }
