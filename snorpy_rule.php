@@ -26,8 +26,9 @@
                 $classtype = $_POST["classtype"];
                 $priority = $_POST["priority"];
                 $gid = $_POST["gid"];
-                echo $action." ".$protocol." ".$sourceip." -> ".$dstip." ( msg:\"".$headermessage."\"; classtype:".$classtype."; "
-        .$priority."; gid:".$gid."; sid:".$sid."; rev:".$rev."; )";
+                $a = String($action." ".$protocol." ".$sourceip." -> ".$dstip." ( msg:\"".$headermessage."\"; classtype:".$classtype."; "
+        .$priority."; gid:".$gid."; sid:".$sid."; rev:".$rev."; )");
+        echo $a;
             }elseif($protocol=='icmp'){
                 $sourceip = $_POST["sourceip"];
                 $dstip = $_POST["dstip"];
@@ -73,54 +74,6 @@
         }
     }
 
-    
-    
-        // $protocol = $_POST["protocol"];
-        // $sourceip = $_POST["sourceip"];
-        // $srcport = $_POST["srcport"];
-        // $dstip = $_POST["dstip"];
-        // $dstport = $_POST["dstport"];
-        // $sid = $_POST["sid"];
-        // $rev = $_POST["rev"];
-        // $headermessage = $_POST["headermessage"];
-        // $classtype = $_POST["classtype"];
-        // $priority = $_POST["priority"];
-        // $gid = $_POST["gid"];
-        // =======================================
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-        // $action = $_POST["action"];
-
-    
-
-        // echo "test";
-        // echo $action
-        // echo $name.$protocol.$sourceip.$srcport.$dstip.$dstport.$sid.$rev.$headermessage.$classtype.$gid;
-        // echo $action." ".$protocol." ".$sourceip." ".$srcport." "." -> ".$dstip." ".$dstport." ( msg:\"".$headermessage."\"; classtype:".$classtype."; "
-        // .$priority."; gid:".$gid."; sid:".$sid."; rev:".$rev."; )";
-        // echo $protocol;
     ?>
 </body>
     <script src="./js/particles.js"></script>

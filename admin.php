@@ -8,6 +8,8 @@
 		<meta name="description" content="Static &amp; Dynamic Tables" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+		<!-- <link rel='stylesheet' href='./css/snorpy.css' type='text/css'></link> -->
+   		<link rel="stylesheet" href="./css/jquery-ui.css"></link>
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -37,20 +39,18 @@
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
-    <link rel='stylesheet' href='./background.css' type='text/css'></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!--[if lte IE 8]>
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 		<style>
-            li.isHidden{
-                display : none
-            }
-			li.isHidden2{
-                display : none
-            }
-        </style>
+				li.isHidden{
+					display : none
+				}
+				li.isHidden2{
+					display : none
+				}
+			</style>
 	</head>
 
 	<body class="no-skin">
@@ -67,7 +67,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="dashboard.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Distributed IPS
@@ -78,12 +78,13 @@
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
 
+<!-- All Notification Alert -->
 						<li class="purple dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important">10</span>
 							</a>
-
+<!-- All Notification -->
 							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
 								<li class="dropdown-header">
 									<i class="ace-icon fa fa-exclamation-triangle"></i>
@@ -93,11 +94,11 @@
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 										<li>
-											<a href="#">
+											<a href="">
 												<div class="clearfix">
 													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-exclamation-triangle"></i>
-														New Detect !!
+														<i class="btn btn-xs no-hover btn-pink fa bigger-110 fa-exclamation-triangle"></i>
+														All New Detect !!
 													</span>
 													<span class="pull-right badge badge-info">+12</span>
 												</div>
@@ -105,40 +106,35 @@
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin A
+											<a href="tables.html">
+												<i class="fa bigger-110 fa-user">
+														New Update By Raspberry Pi 1
+												</i>
 												<span class="pull-right badge badge-info">+11</span>
 											</a>
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin Arnon
+											<a href="tables_pi2.html">
+													<i class="fa bigger-110 fa-user">
+															New Update By Raspberry Pi 2
+													</i>
 												<span class="pull-right badge badge-info">+12</span>
 											</a>
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin Toonnga
+											<a href="tables_pi3.html">
+													<i class="fa bigger-110 fa-user">
+															New Update By Raspberry Pi 3
+													</i>
 												<span class="pull-right badge badge-info">+8</span>
 											</a>
 										</li>
-
-
-
 									</ul>
 								</li>
 
-								<li class="dropdown-footer">
-									<a href="#">
-										See all notifications
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
+								
 							</ul>
 						</li>
 
@@ -149,19 +145,15 @@
 								<img class="nav-user-photo" src="assets/images/avatars/avatar2.png" alt="User's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									User
+									<div id="user"></div>
+<!-- User -->
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-cog"></i>
-										Settings
-									</a>
-								</li>
+								
 
 								<li>
 									<a href="profile.html">
@@ -257,7 +249,7 @@
 							</li>
 
 							<li class="">
-								<a href="table_pi2.html">
+								<a href="tables_pi2.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Raspberry Pi 2
 								</a>
@@ -266,7 +258,7 @@
 							</li>
 							
 							<li class="">
-								<a href="table_pi3.html">
+								<a href="tables_pi3.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Raspberry Pi 3
 								</a>
@@ -294,9 +286,8 @@
 							</li>
 
 							<li>
-								<a href="tables.html">Tables</a>
+								<a href="admin.php">Add rule</a>
 							</li>
-							<li class="active">Static &amp; Dynamic Tables</li>
 						</ul><!-- /.breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
@@ -313,228 +304,198 @@
 
 						<div class="page-header">
 							<h1>
-								Tables
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									Static &amp; Dynamic Tables
-								</small>
+								Add Rule
 							</h1>
 						</div><!-- /.page-header -->
-<!-- Head table -->
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<div class="row">
-									<div class="col-xs-12">
-                                    <form method="post" action="./snorpy_rule.php"> 
+
+<!--  jQuery dataTables -->
+								
+<form method="post" action="./snorpy_rule.php">  
+  <!-- Name: <input type="text" name="name"> -->
+ <h2>Add Rule</h2> 
+  <div class="rulebody">
+  <br><br>
+                    <select id="action" name="action" >
+                        <option value="">Action</option>
+                        <option value="alert">alert</option>
+                        <option value="log">log</option>
+                        <option value="pass">pass</option>
+                        <option value="activate">activate</option>
+                        <option value="dynamic">dynamic</option>
+                        <option value="drop">drop</option>
+                        <option value="reject">reject</option>
+                        <option value="sdrop">sdrop</option>
+                    </select>
+                    <select id="protocol" name="protocol">
+                        <option value="">Protocol</option>
+                        <option value="tcp">tcp</option>
+                        <option value="icmp">icmp</option>
+                        <option value="udp">udp</option>
+                        <option value="ip">ip</option>
+                    </select>
+                    <input name="sourceip" placeholder="source ip"></input>
+                    <input name="srcport" placeholder="source port"></input>
+                    <input name="dstip"  placeholder="dest ip"></input>
+                    <input name="dstport"  placeholder="dest port"></input>
+                    <input id="sid" name="sid"  placeholder="sid"></input>
+                    <input name="rev" placeholder="rev num"></input>
+
+                    <input id=headermessage  name="headermessage" placeholder="Rule Message ( \ Escape special characters)"></input>
+                    <input  name="classtype" placeholder="Class-Type"></input>
+                    <select name="priority">
+                        <option value="">Priority</option>
+                        <option value="priority:1;">1</option>
+                        <option value="priority:2;">2</option>
+                        <option value="priority:3;">3</option>
+                        <option value="priority:4;">4</option>
+                        <option value="priority:5;">5</option>
+                    </select>
+                    <input  name="gid" placeholder="gid">
+                    <!-- This is the LEFT Main box holind protocol option box -->
             
-            <div class="col-sm-12">
+                    <h4>IP</h4>
+                    <select name="ttlevaluator" >
+                        <option value="&gt;">&gt;</option>
+                        <option value="&lt;">&lt;</option>
+                        <option value="=">=</option>
+                        <option selected="selected" value="">TTL</option>
+                    </select>
+
+                    <input name="ttl" type="text" />
+                    </br></br></br>
+                    <select name="ipprotoevaluator" size="1">
+                        <option value="&gt;">&gt;</option>
+                        <option value="&lt;">&lt;</option>
+                        <option value="=">=</option>
+                        <option selected="selected" value="">IP PROTOCOL</option>
+                    </select>
+                    <input name="ipprotofield" type="text" />
             
-                <div class="fonttext">
-                    snort
-                </div>
+                <!-- TCP Options -->
                 
-                <div class="shape"><!-- Add Rule -->
-                        <select name="action" >
-                                <option value="">Action</option>
-                                <option value="alert">alert</option>
-                                <option value="log">log</option>
-                                <option value="pass">pass</option>
-                                <option value="activate">activate</option>
-                                <option value="dynamic">dynamic</option>
-                                <option value="drop">drop</option>
-                                <option value="reject">reject</option>
-                                <option value="sdrop">sdrop</option>
-                            </select>
-                            <select name="protocol">
-                                <option value="">Protocol</option>
-                                <option value="tcp">tcp</option>
-                                <option value="icmp">icmp</option>
-                                <option value="udp">udp</option>
-                                <option value="ip">ip</option>
-                            </select>
-                            <input id="text" name="sourceip" placeholder="source ip"></input>
-                            <input id="text"  name="srcport" placeholder="source port"></input>
-                            <input id="text"  name="dstip"  placeholder="dest ip"></input>
-                            <input id="text"  name="dstport"  placeholder="dest port"></input>
-                            <input id="text"  name="sid"  placeholder="sid"></input>
-                            <input id="text"  name="rev" placeholder="rev num"></input>
-                        </br>
-                            <input id=headermessage  name="headermessage" placeholder="Rule Message ( \ Escape special characters)"></input>
-                            <input id="text"    name="classtype" placeholder="Class-Type"></input>
-                            <select name="priority">
-                                <option value="">Priority</option>
-                                <option value="priority:1;">1</option>
-                                <option value="priority:2;">2</option>
-                                <option value="priority:3;">3</option>
-                                <option value="priority:4;">4</option>
-                                <option value="priority:5;">5</option>
-                            </select>
-                            <input id="text"    name="gid" placeholder="gid">
-                </div>
-                <div class="col-sm-6"><!-- IP -->
-                        <div class="ip">
-                            <h4>IP</h4>
-                                <select name="ttlevaluator" >
-                                        <option value="&gt;">&gt;</option>
-                                        <option value="&lt;">&lt;</option>
-                                        <option value="=">=</option>
-                                        <option selected="selected" value="">TTL</option>
-                                    </select>
+                    <h4>TCP</h4>
+                    <select class="tcpinputs" id="httpmethodForm" >
+                        <option value='content:"GET"; http_method;'>GET</option>
+                        <option value='content:"POST"; http_method;'>POST</option>
+                        <option value='content:"HEAD"; http_method;'>HEAD</option>
+                        <option value='content:"TRACE"; http_method;'>TRACE</option>
+                        <option value='content:"PUT"; http_method;'>PUT</option>
+                        <option value='content:"DELETE"; http_method;'>DELETE</option>
+                        <option value='content:"CONNECT"; http_method;'>CONNECT</option>
+                        <option selected="selected" value="">HTTP REQUEST METHOD</option>
+                    </select>
+                &nbsp<select  class="tcpinputs" style="border-radius:5px; background-color:#f2f2f2; padding:3px;" id="httpstatuscode">
+                    <option value="100">100</option>
+                    <option value="101">101</option>
+                    <option value="200">200</option>
+                    <option value="201">201</option>
+                    <option value="202">202</option>
+                    <option value="203">203</option>
+                    <option value="204">204</option>
+                    <option value="205">205</option>
+                    <option value="206">206</option>
+                    <option value="300">300</option>
+                    <option value="301">301</option>
+                    <option value="302">302</option>
+                    <option value="303">303</option>
+                    <option value="304">304</option>
+                    <option value="305">305</option>
+                    <option value="306">306</option>
+                    <option value="307">307</option>
+                    <option value="400">400</option>
+                    <option value="401">401</option>
+                    <option value="402">402</option>
+                    <option value="403">403</option>
+                    <option value="404">404</option>
+                    <option value="405">405</option>
+                    <option value="406">406</option>
+                    <option value="407">407</option>
+                    <option value="408">408</option>
+                    <option value="409">409</option>
+                    <option value="410">410</option>
+                    <option value="411">411</option>
+                    <option value="412">412</option>
+                    <option value="413">413</option>
+                    <option value="415">415</option>
+                    <option value="416">416</option>
+                    <option value="417">417</option>
+                    <option value="500">500</option>
+                    <option value="501">501</option>
+                    <option value="502">502</option>
+                    <option value="503">503</option>
+                    <option value="504">504</option>
+                    <option value="505">505</option>
+                    <option selected="selected" value="">HTTP RESPONSE CODE</option>
+                    </select></br>
+                    </br></br>
+                    ACK
+                    <input style="border-radius:5px; background-color:#f2f2f2; padding:3px;" id="ACK" class=" check2 opflags opflags" type="checkbox" value="A" />&nbsp;SYN<input id="SYN"  class=" check2 opflags" type="checkbox" value="S" />&nbsp;PSH<input id="PSH"  class=" check2 opflags" type="checkbox" value="P" />&nbsp;RST<input id="RST"  class=" check2 opflags" type="checkbox" value="R" />&nbsp;FIN<input id="FIN"  class=" check2 opflags" type="checkbox" value="F" />&nbsp;URG<input id="URG"  class=" check2 opflags" type="checkbox" value="U" />&nbsp;+<input id="flagplus" class=" check2 opflags flagoptions" type="checkbox" value="+" />&nbsp;*<input id="wildcard" class=" check2 opflags flagoptions" type="checkbox" value="*" /></br>
+                    </br></br>
+                    <select class="tcpinputs" id="tcpdirectionForm">
+                        <option value="FROM_SERVER">FROM_SERVER</option>
+                        <option value="TO_SERVER">TO_SERVER</option>
+                        <option value="TO_CLIENT">TO_CLIENT</option>
+                        <option value="FROM_CLIENT">FROM_CLIENT</option>
+                        <option selected="selected" value="">DIRECTION</option>
+                    </select>
+                    &nbsp
+                    <select  class="tcpinputs" id="tcpstateForm">
+                        <option value="established">established</option>
+                        <option value="stateless">stateless</option>
+                        <option value="not_established">not_established</option>
+                        <option selected="selected" value="">TCP STATE</option>
+                    </select>
                 
-                                    <input name="ttl" type="text" />
-                                    </br></br>
-                                    <select name="ipprotoevaluator" size="1">
-                                        <option value="&gt;">&gt;</option>
-                                        <option value="&lt;">&lt;</option>
-                                        <option value="=">=</option>
-                                        <option selected="selected" value="">IP PROTOCOL</option>
-                                    </select>
-                                    <input name="ipprotofield" type="text" />
-                        
-                        </div>
-                    </div>
-                    
-                <div class="col-sm-6"><!-- TCP -->
-                        <div class="tcp">
-                                <h4>TCP</h4>
-                        <select class="tcpinputs" id="httpmethodForm" >
-                            <option value='content:"GET"; http_method;'>GET</option>
-                            <option value='content:"POST"; http_method;'>POST</option>
-                            <option value='content:"HEAD"; http_method;'>HEAD</option>
-                            <option value='content:"TRACE"; http_method;'>TRACE</option>
-                            <option value='content:"PUT"; http_method;'>PUT</option>
-                            <option value='content:"DELETE"; http_method;'>DELETE</option>
-                            <option value='content:"CONNECT"; http_method;'>CONNECT</option>
-                            <option selected="selected" value="">HTTP REQUEST METHOD</option>
-                        </select>
-                    &nbsp<select  class="tcpinputs" style="border-radius:5px; background-color:#f2f2f2; padding:3px;" id="httpstatuscode">
-                        <option value="100">100</option>
-                        <option value="101">101</option>
-                        <option value="200">200</option>
-                        <option value="201">201</option>
-                        <option value="202">202</option>
-                        <option value="203">203</option>
-                        <option value="204">204</option>
-                        <option value="205">205</option>
-                        <option value="206">206</option>
-                        <option value="300">300</option>
-                        <option value="301">301</option>
-                        <option value="302">302</option>
-                        <option value="303">303</option>
-                        <option value="304">304</option>
-                        <option value="305">305</option>
-                        <option value="306">306</option>
-                        <option value="307">307</option>
-                        <option value="400">400</option>
-                        <option value="401">401</option>
-                        <option value="402">402</option>
-                        <option value="403">403</option>
-                        <option value="404">404</option>
-                        <option value="405">405</option>
-                        <option value="406">406</option>
-                        <option value="407">407</option>
-                        <option value="408">408</option>
-                        <option value="409">409</option>
-                        <option value="410">410</option>
-                        <option value="411">411</option>
-                        <option value="412">412</option>
-                        <option value="413">413</option>
-                        <option value="415">415</option>
-                        <option value="416">416</option>
-                        <option value="417">417</option>
-                        <option value="500">500</option>
-                        <option value="501">501</option>
-                        <option value="502">502</option>
-                        <option value="503">503</option>
-                        <option value="504">504</option>
-                        <option value="505">505</option>
-                        <option selected="selected" value="">HTTP RESPONSE CODE</option>
-                        </select></br>
+                <!-- UDP Options -->
+                
+                    </br></br></br><h4>UDP</h4>
+                    </br></br></br>
+                    <select style="width: 90%;" id="udpdirectionForm">
+                        <option value="FROM_SERVER">FROM_SERVER</option>
+                        <option value="TO_SERVER">TO_SERVER</option>
+                        <option value="TO_CLIENT">TO_CLIENT</option>
+                        <option value="FROM_CLIENT">FROM_CLIENT</option>
+                        <option selected="selected" value="">DIRECTION</option>
+                    </select>
+                
+                <!-- ICMP Options -->
+                
+                    </br></br></br><h4>ICMP</h4>
+                    <select  class="tcpinputs" id="icmptypeevaluator">
+                    <option value="&gt;">&gt;</option>
+                    <option value="&lt;">&lt;</option>
+                    <option value="=">=</option>
+                    <option selected="selected" value="">ICMP TYPE</option>
+                    </select>
+                        <input  class="tcpinputs" id="icmptype" type="text" />
                         </br>
-                        ACK
-                        <input style="border-radius:5px; background-color:#f2f2f2; padding:3px;" id="ACK" class="pin" type="checkbox" value="A" />
-                            &nbsp;SYN<input id="SYN"  class="pin" type="checkbox" value="S" />
-                            &nbsp;PSH<input id="PSH"  class="pin" type="checkbox" value="P" />
-                            &nbsp;RST<input id="RST"  class="pin" type="checkbox" value="R" />
-                            &nbsp;FIN<input id="FIN"  class="pin" type="checkbox" value="F" />
-                            &nbsp;URG<input id="URG"  class="pin" type="checkbox" value="U" />
-                            &nbsp;+<input id="flagplus" class="pin" type="checkbox" value="+" />
-                            &nbsp;*<input id="wildcard" class="pin" type="checkbox" value="*" />
-                        </br></br>
-                        <select class="tcpinputs" id="tcpdirectionForm">
-                            <option value="FROM_SERVER">FROM_SERVER</option>
-                            <option value="TO_SERVER">TO_SERVER</option>
-                            <option value="TO_CLIENT">TO_CLIENT</option>
-                            <option value="FROM_CLIENT">FROM_CLIENT</option>
-                            <option selected="selected" value="">DIRECTION</option>
-                        </select>
-                        &nbsp
-                        <select  class="tcpinputs" id="tcpstateForm">
-                            <option value="established">established</option>
-                            <option value="stateless">stateless</option>
-                            <option value="not_established">not_established</option>
-                            <option selected="selected" value="">TCP STATE</option>
-                        </select>
-                        </div>
-                    </div>
+                    </br></br></br>
+                    <select  class="tcpinputs" id="icmpcodeevaluator">
+                        <option value="&gt;">&gt;</option>
+                        <option value="&lt;">&lt;</option>
+                        <option value="=">=</option>
+                        <option selected="selected" value="">ICMP CODE</option>
+                    </select>
+                    <input  class="tcpinputs" id="icmpcode" type="text" />
+           
+
                     
-                <div class="col-sm-6"><!-- ICMP -->
-                            <div class="icmp">
-                                    <h4>ICMP</h4>
-                                        <select  class="tcpinputs" id="icmptypeevaluator">
-                                        <option value="&gt;">&gt;</option>
-                                        <option value="&lt;">&lt;</option>
-                                        <option value="=">=</option>
-                                        <option selected="selected" value="">ICMP TYPE</option>
-                                        </select>
-                                            <input  class="tcpinputs" id="icmptype" type="text" />
-                                            </br></br>
-                                        <select  class="tcpinputs" id="icmpcodeevaluator">
-                                            <option value="&gt;">&gt;</option>
-                                            <option value="&lt;">&lt;</option>
-                                            <option value="=">=</option>
-                                            <option selected="selected" value="">ICMP CODE</option>
-                                        </select>
-                                        <input  class="tcpinputs" id="icmpcode" type="text" />
-                            </div>
-                        </div>
-                    
-                <div class="col-sm-6"><!-- UDP -->
-                            <div class="udp">
-                             <h4>UDP</h4>
-                                </br>
-                                <select style="width: 90%;" id="udpdirectionForm">
-                                    <option value="FROM_SERVER">FROM_SERVER</option>
-                                    <option value="TO_SERVER">TO_SERVER</option>
-                                    <option value="TO_CLIENT">TO_CLIENT</option>
-                                    <option value="FROM_CLIENT">FROM_CLIENT</option>
-                                    <option selected="selected" value="">DIRECTION</option>
-                                </select>
-                            </div>
-                        </div>
-                    
-                        <!-- <input class="submit" type="submit" name="submit" value="Submit"> -->
-                    
-            </div>
-            <input class="submit" type="submit" name="submit" value="Submit">
     
-    </form><!-- End Form -->
-									</div><!-- /.span -->
-								</div><!-- /.row -->
 
-								
-								
-								
-								
-								<!--
-								<div class="hr hr-18 dotted hr-double"></div>
-								-->
-								
-
+  <br><br>
+  <!-- Gender:
+  <input type="radio" name="gender" value="female">Female
+  <input type="radio" name="gender" value="male">Male
+  <br><br>
+  <input type="checkbox" name="ch" value="ch"></input> -->
+  <input type="submit" name="submit" value="Submit" onclick="getRule()">  
+  </div>
+</form>
 
 								
 
+								
+<!-- //  -->
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
@@ -560,35 +521,64 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
 		<script src="assets/js/jquery-2.1.4.min.js"></script>
 
-		<!-- <![endif]-->
+<!-- <![endif]-->
 
-		<!--[if IE]>
+<!--[if IE]>
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="assets/js/dataTables.buttons.min.js"></script>
+<script src="assets/js/buttons.flash.min.js"></script>
+<script src="assets/js/buttons.html5.min.js"></script>
+<script src="assets/js/buttons.print.min.js"></script>
+<script src="assets/js/buttons.colVis.min.js"></script>
+<script src="assets/js/dataTables.select.min.js"></script>
+
+<!-- ace scripts -->
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
 		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
 
-		<!-- page specific plugin scripts -->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
-		<script src="assets/js/dataTables.buttons.min.js"></script>
-		<script src="assets/js/buttons.flash.min.js"></script>
-		<script src="assets/js/buttons.html5.min.js"></script>
-		<script src="assets/js/buttons.print.min.js"></script>
-		<script src="assets/js/buttons.colVis.min.js"></script>
-		<script src="assets/js/dataTables.select.min.js"></script>
+			$(document).ready(function(){
+						var token = localStorage.getItem("Token")
+						$.post("http://localhost:3001/profile/user", 
+						{token:token}).then(function(res,status){
+							console.log(res)
+									$(document).ready(function() {    
+									$('#user')[0].innerHTML +=
+									res.docs.Username
+									
+								})
+						})
+			})
+			
+			function getRule(){
+				var action = document.getElementById("action").value
+				var protocol = document.getElementById("protocol").value
+				var sid = document.getElementById("sid").value
 
-		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
+				$.post("http://localhost:3001/addrule", 
+						{action:action,protocol:protocol,sid:sid}).then(function(res,status){
+							console.log(res)
+							if(res.success=="true"){
+								alert(res.message)
+							}else{
+								alert(res.message)
+							}
+						})
+			}
 
-		<script type="text/javascript">
+
 			window.check()
 
 			function check(){
@@ -617,7 +607,7 @@
                 
 			    }
             }
-
+			
 			function logout(){
 				console.log("logout")
 				localStorage.removeItem("Token");
@@ -633,207 +623,8 @@
 		
 
 
-		<!-- inline scripts related to this page -->
-		<script type="text/javascript">
-			jQuery(function($) {
-				//initiate dataTables plugin
-				var myTable = 
-				$('#dynamic-table')
-				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-				.DataTable( {
-					bAutoWidth: false,
-					"aoColumns": [
-					  { "bSortable": false },
-					  null, null,null, null, null,
-					  { "bSortable": false }
-					],
-					"aaSorting": [],
-					select: {
-						style: 'multi'
-					}
-			    } );
-			
-				
-				
-				$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
-				
-				new $.fn.dataTable.Buttons( myTable, {
-					buttons: [
-					  {
-						"extend": "colvis",
-						"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
-						"className": "btn btn-white btn-primary btn-bold",
-						columns: ':not(:first):not(:last)'
-					  },
-					  {
-						"extend": "copy",
-						"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
-						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
-						"extend": "csv",
-						"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
-						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
-						"extend": "excel",
-						"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
-						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
-						"extend": "pdf",
-						"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
-						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
-						"extend": "print",
-						"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
-						"className": "btn btn-white btn-primary btn-bold",
-						autoPrint: false,
-						message: 'This print was produced using the Print button for DataTables'
-					  }		  
-					]
-				} );
-				myTable.buttons().container().appendTo( $('.tableTools-container') );
-				
-				//style the message box
-				var defaultCopyAction = myTable.button(1).action();
-				myTable.button(1).action(function (e, dt, button, config) {
-					defaultCopyAction(e, dt, button, config);
-					$('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
-				});
-				
-				
-				var defaultColvisAction = myTable.button(0).action();
-				myTable.button(0).action(function (e, dt, button, config) {
-					
-					defaultColvisAction(e, dt, button, config);
-					
-					
-					if($('.dt-button-collection > .dropdown-menu').length == 0) {
-						$('.dt-button-collection')
-						.wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
-						.find('a').attr('href', '#').wrap("<li />")
-					}
-					$('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
-				});
-			
-				////
-			
-				setTimeout(function() {
-					$($('.tableTools-container')).find('a.dt-button').each(function() {
-						var div = $(this).find(' > div').first();
-						if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
-						else $(this).tooltip({container: 'body', title: $(this).text()});
-					});
-				}, 500);
-				
-				
-				
-				
-				
-				myTable.on( 'select', function ( e, dt, type, index ) {
-					if ( type === 'row' ) {
-						$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
-					}
-				} );
-				myTable.on( 'deselect', function ( e, dt, type, index ) {
-					if ( type === 'row' ) {
-						$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
-					}
-				} );
-			
-			
-			
-			
-				/////////////////////////////////
-				//table checkboxes
-				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
-				
-				//select/deselect all rows according to table header checkbox
-				$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
-					var th_checked = this.checked;//checkbox inside "TH" table header
-					
-					$('#dynamic-table').find('tbody > tr').each(function(){
-						var row = this;
-						if(th_checked) myTable.row(row).select();
-						else  myTable.row(row).deselect();
-					});
-				});
-				
-				//select/deselect a row when the checkbox is checked/unchecked
-				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
-					var row = $(this).closest('tr').get(0);
-					if(this.checked) myTable.row(row).deselect();
-					else myTable.row(row).select();
-				});
-			
-			
-			
-				$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
-					e.stopImmediatePropagation();
-					e.stopPropagation();
-					e.preventDefault();
-				});
-				
-				
-				
-				//And for the first simple table, which doesn't have TableTools or dataTables
-				//select/deselect all rows according to table header checkbox
-				var active_class = 'active';
-				$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
-					var th_checked = this.checked;//checkbox inside "TH" table header
-					
-					$(this).closest('table').find('tbody > tr').each(function(){
-						var row = this;
-						if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
-						else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
-					});
-				});
-				
-				//select/deselect a row when the checkbox is checked/unchecked
-				$('#simple-table').on('click', 'td input[type=checkbox]' , function(){
-					var $row = $(this).closest('tr');
-					if($row.is('.detail-row ')) return;
-					if(this.checked) $row.addClass(active_class);
-					else $row.removeClass(active_class);
-				});
-			
-				
-			
-				/********************************/
-				//add tooltip for small view action buttons in dropdown menu
-				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-				
-				//tooltip placement on right or left
-				function tooltip_placement(context, source) {
-					var $source = $(source);
-					var $parent = $source.closest('table')
-					var off1 = $parent.offset();
-					var w1 = $parent.width();
-			
-					var off2 = $source.offset();
-					//var w2 = $source.width();
-			
-					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-					return 'left';
-				}
-				
-				
-				
-				
-				/***************/
-				$('.show-details-btn').on('click', function(e) {
-					e.preventDefault();
-					$(this).closest('tr').next().toggleClass('open');
-					$(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
-				});
-				/***************/
-				
-				
-				
-			
-			})
-		</script>
+        <script>
+
+        </script>
 	</body>
 </html>
